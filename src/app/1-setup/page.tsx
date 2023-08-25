@@ -10,9 +10,11 @@ export default function Home() {
     text: "Hello World"
   }]);
 
+
   return (
     <main>
-      <Website setMode={setMode} mode={mode} websiteData={websiteData} setWebsiteData={setWebsiteData} />
+      <Website mode={mode} websiteData={websiteData} />
     </main>
   )
 }
+
