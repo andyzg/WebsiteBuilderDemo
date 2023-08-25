@@ -1,6 +1,11 @@
 import { Fragment } from "react";
 
-export default function Website(props) {
+type WebsiteProps = {
+  mode: string;
+  websiteData: any;
+}
+
+export default function Website(props: WebsiteProps) {
   const { mode, websiteData } = props;
 
   const sections = [];

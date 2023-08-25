@@ -1,6 +1,10 @@
 import { useState } from "react";
 
-function AddSection(props) {
+type AddSectionProps = {
+  className?: string;
+};
+
+function AddSection(props: AddSectionProps) {
   const { className = "" } = props;
   const classes = [
     `bg-blue-400 text-white rounded-sm cursor-pointer `,
@@ -17,7 +21,11 @@ function AddSection(props) {
   );
 }
 
-function Toolbar(props) {
+type ToolbarProps = {
+  editing: boolean;
+};
+
+const Toolbar: React.FunctionComponent<ToolbarProps> = (props) => {
   const { editing } = props;
 
   if (!editing) {
@@ -33,7 +41,12 @@ function Toolbar(props) {
   );
 }
 
-export default function Website(props) {
+type WebsiteProps = {
+  mode: string;
+  websiteData: any;
+}
+
+export default function Website(props: WebsiteProps) {
   const { mode, websiteData } = props;
 
   const editing = mode === "edit";
